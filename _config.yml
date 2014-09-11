@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-email:
-language:
+title: wower
+subtitle: im_wower's blog
+description: this is im_wower's blog
+author: im_wower
+email: george674834080@gmail.com
+language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://imwower.github.io
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
