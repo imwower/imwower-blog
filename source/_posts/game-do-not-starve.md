@@ -12,4 +12,4 @@ tag: [游戏, 饥荒]
 
 #### 截图
 
-![饥荒游戏截图](http://upload-images.jianshu.io/upload_images/44230-cf0dd4b233a12df2.jpg)
+![饥荒游戏截图](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/dont-starve/dont-starve-screenshot.jpg)
