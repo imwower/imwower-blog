@@ -101,4 +101,4 @@ google_cse:
 
 #### Standard Search
 standard_search: 
-  engine: 'baidu'  ## possible enum: false/google/baidu. set to false if you want to hide the default search box
+  engine: 'google'  ## possible enum: false/google/baidu. set to false if you want to hide the default search box
