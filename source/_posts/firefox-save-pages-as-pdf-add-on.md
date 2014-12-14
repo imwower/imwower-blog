@@ -1,8 +1,9 @@
 title: firefox save pages as pdf add-on
 date: 2014-09-12 22:10:09
-tags: firefox add-on page-to-pdf
+tags: [firefox, add-on, page-to-pdf]
 
 ---
+
 
 firefox里，有一个比较好用的保存网页为pdf的插件: [Print pages to Pdf](https://addons.mozilla.org/zh-CN/firefox/addon/print-pages-to-pdf/?src=api) 
 
@@ -20,6 +21,6 @@ firefox里，有一个比较好用的保存网页为pdf的插件: [Print pages t
 
 #### 截图
 
-![print-pages-to-pdf-add-on.png](http://upload-images.jianshu.io/upload_images/44230-025256a858ae9a75.png)
+![print-pages-to-pdf-add-on.png](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/firefox-save-pages-as-pdf-add-on/firefox-save-pages-as-pdf-add-on-screenshot1.png)
 
-![print-pages-to-pdf.png](http://upload-images.jianshu.io/upload_images/44230-5a48e77dffcb9267.png)
+![print-pages-to-pdf.png](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/firefox-save-pages-as-pdf-add-on/firefox-save-pages-as-pdf-add-on-screenshot2.png)
