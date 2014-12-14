@@ -1,6 +1,7 @@
-title: SNS-by-topic
+title: 基于话题/兴趣的社交
 date: 2014-12-14 17:02:49
-tags:
+tags: 脑洞 创意 想法
+categories: 脑洞 创意 想法
 ---
 
 - 在这里，找到跟你 **#志同道合** 的人；
