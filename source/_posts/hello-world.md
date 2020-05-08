@@ -1,69 +1,121 @@
-title: hello world
-tag: [hello-world, hexo]
+title: 使用GitHub Pages托管博客
+tag: [hello-world, hexo, GitHub, highlight]
 ---
 
 
-终于下决心把博客由wordpress搬到github pages上了。。其实主要是懒得折腾。。这里把折腾[hexo](http://hexo.io/ "hexo")的过程记录一下，做个备用。
+[GitHub Pages](https://pages.github.com/ "GitHub Pages")本身可以托管静态页面，也绑定自定义域名，同时支持SSL证书；这里使用[Hexo](http://hexo.io/ "hexo")生成静态页面，然后托管在GitHub上。以下是折腾过程，做个备用。
 
-- #### 前提
+#### 前提
 
+1. 本地安装Git；
+2. 本地安装Node.js；
 
-1. 安装Git；
-2. 安装Nodejs；
+#### 安装
 
+1. 命令行执行npm安装Hexo，步骤可以参考：[Hexo官方教程](http://hexo.io/)；
+	加`verbose`参数是为了查看详细信息，以免中途挂掉：
+``` bash
+npm install hexo-cli -g -verbose
+```
 
-- #### 安装
+2. 在本地创建博客的根目录，会创建一个`blog`文件夹，这个文件夹就是Hexo的工作目录：
+``` bash
+hexo init blog
+```
 
+3. 
+``` bash
+cd blog
+ls
+_config.yml  db.json        package.json       public/     source/
+CNAME        node_modules/  package-lock.json  scaffolds/  themes/
+```
 
-1.  打开Git Bash，用npm安装hexo，步骤可以参考[hexo官方教程](http://hexo.io/)：
-````
-npm install hexo -g -verbose
-````
-*加verbose参数是为了查看详细信息，以免中途挂掉；*
-*这里用的是Git Bash，不是cmd；*
-
-2.  在本地创建目录：
-````
-hexo init content
-````
-*content为文件夹名，可以随意*
-会在根目录创建一个content文件夹，这个文件夹就是hexo的工作目录：
-![工作目录](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/hello-world/hello-world-1.png)
-![文件夹结构](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/hello-world/hello-world-2.png)
-
-3.  安装node缺失的依赖包
-````
-cd content
+4. 安装`Hexo`缺失的依赖包:
+``` bash
+cd blog
 npm install -verbose
-````
-![安装依赖包](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/hello-world/hello-world-3.png)
+```
 
-4.  生成html静态页面，查看效果：
+5. 生成html静态页面，本地查看效果：
 ````
 hexo generate
 hexo server
 ````
-![本地执行效果](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/hello-world/hello-world-4.png)
-![文件夹结构](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/hello-world/hello-world-5.png)
-![生成的静态页面](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/hello-world/hello-world-6.png)
+	*或者使用简写命令：`hexo g & hexo s`*
 
+#### 发布
+1. 这里发布到GitHub Pages，还需要安装[hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)包：
+```
+npm install hexo-deployer-git --save
+```
 
-- #### 发布
-
-
-1.  打开_config.yml，修改deploy节点：
-````
+2. 打开`_config.yml`，修改`deploy`节点：
+```
 deploy:
-  type: github
+  type: git
   repo: https://github.com/imwower/imwower.github.io.git
-````
-*type和repo的冒号之后有一个空格*
+```
 
-2.  发布到github：
-````
+3. 发布到GitHub：
+```
+##  这里其实就是把`public`文件夹里的所有静态页面提交到GitHub上了而已
 hexo deploy
-````
-*这里的发布使用的是https，需要手动输入github用户名和密码。ssh可能不太一样*
+```
 
-3. 创建另一个git repo，把当前文件夹内容提交，这样以后直接clone这个repo，就不需要再对hexo进行配置，同时可以随时修改博客内容了：
-![另一个repo](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/hello-world/hello-world-7.png)
+4. 创建另一个Git repo，把当前文件夹(`blog`)内容提交，这样以后直接修改`blog`这个repo，就不需要再对Hexo进行配置，包括主题、包依赖等，同时可以随时修改博客内容了：
+```
+工作目录(blog）: [https://github.com/imwower/imwower-blog.git](https://github.com/imwower/imwower-blog.git)
+博客内容: [https://github.com/imwower/imwower.github.io.git](https://github.com/imwower/imwower.github.io.git)
+```
+
+#### 其他
+1. 修改`blog`目录下的`_config.yml`，使用`iceman`主题：
+```
+theme: iceman
+```
+
+2. 关闭自带的语法高亮插件，使用`highlightjs`：
+``` yml
+##  将默认的`highlight`修改为`false`
+highlight:
+	enable: false
+	line_number: true
+	auto_detect: false
+ 	tab_replace: ''
+	wrap: true
+	hljs: false
+```
+
+3. 添加新的配置项：
+``` yml
+highlightjs: true
+```
+
+4. 进入主题所在的文件夹，找到`/blog/themes/iceman/layout/_partial/footer.ejs`模板，添加`highlight.js`的引用：
+``` html
+	<div id="footer">
+	...省略中间代码...
+	</div>
+
+	<% if (config.highlightjs) { %>
+	<!-- Highlight.js -->
+	<link rel="stylesheet"
+	      href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.0.1/styles/atom-one-dark.min.css">
+	<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.0.1/highlight.min.js">
+	</script>
+	<script>
+	    hljs.initHighlightingOnLoad();
+	</script>
+	<% } %>
+```
+
+	*参考：[Hexo博客添加highlight-js代码高亮](https://zihengcat.github.io/2018/03/05/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0highlight-js%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/)*
+
+
+5. 博客插入图片：
+这里是直接在`/blog/source/images/`文件夹下存放图片文件，在文章里插入图片时，使用相对路径：
+```
+markdown代码：`![image](/images/2.png)`
+```
+	示例：![image](/images/2.png)
