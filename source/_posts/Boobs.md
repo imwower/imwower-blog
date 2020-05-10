@@ -1,6 +1,8 @@
+---
 title: 关于胸部的名人名言
-tag: 段子
-
+date: 2014-12-15 11:10:29
+updated: 2014-12-15 11:10:29
+tags: [段子,吐槽,段子]
 ---
 
 
@@ -70,4 +72,4 @@ tag: 段子
 
 > 横看成枕侧成胸， 左右起伏皆相同。 不知两岳何人属， 只愿死在此胸中。」《题胸林壁》宋 苏轼
 
-![关于胸部的名人名言](https://raw.githubusercontent.com/imwower/imwower-blog-image/master/images/%E5%85%B3%E4%BA%8E%E8%83%B8%E9%83%A8%E7%9A%84%E5%90%8D%E4%BA%BA%E5%90%8D%E8%A8%80/%E5%85%B3%E4%BA%8E%E8%83%B8%E9%83%A8%E7%9A%84%E5%90%8D%E4%BA%BA%E5%90%8D%E8%A8%80-1.jpg)
+![关于胸部的名人名言](/images/Boobs/Boobs-1.jpg)
