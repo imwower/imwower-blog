@@ -1,7 +1,9 @@
-title: 使用GitHub Pages托管博客
-tag: [hello-world, hexo, GitHub, highlight]
 ---
+title: 使用GitHub Pages托管博客
+date: 2020-05-08 23:39:21
+tag: [hello-world, hexo, GitHub, highlight]
 
+---
 
 [GitHub Pages](https://pages.github.com/ "GitHub Pages")本身可以托管静态页面，也绑定自定义域名，同时支持SSL证书；这里使用[Hexo](http://hexo.io/ "hexo")生成静态页面，然后托管在GitHub上。以下是折腾过程，做个备用。
 
