@@ -1,18 +1,45 @@
-<% if ( page.comments){ %>
-<section class="comment">
-    <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'wower-blog'; // required: replace example with your forum shortname
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
+<% if (page.comments){ %>
+    <section class="comment">
+        <div id="vssue"></div>
+        <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
+        <script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
+        <script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+        <script>
+            new Vue({
+                el: '#vssue',
+                render: h => h('Vssue', {
+                    props: {
+                        title: '<%- page.title %>',
+                        options: {
+                            owner: '<%- theme.vssue.owner %>',
+                            repo: '<%- theme.vssue.repo %>',
+                            clientId: '<%- theme.vssue.clientId %>',
+                            clientSecret: '<%- theme.vssue.clientSecret %>',
+                        },
+                    }
+                })
+            })
         </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</section>
+        <style>
+            .vssue {
+                padding: 0;
+                padding-top: 10px;
+            }
+            .vssue :not(.vssue-comment-content) a {
+                color: #2ca6cb;
+            }
+            .vssue .vssue-button:not(:disabled).vssue-button-primary {
+                color: #2ca6cb;
+                border-color: #2ca6cb;
+            }
+            .vssue .vssue-button {
+                border: 2px solid #2ca6cb;
+                border-radius: 1px;
+            }
+            .vssue .vssue-new-comment .vssue-new-comment-input {
+                border-radius: 1px;
+            }
+        </style>
+    </section>
 <% } %>
+

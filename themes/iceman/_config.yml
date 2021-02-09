@@ -12,7 +12,7 @@ menu:
 ## ---
 
 #### Widgets
-widgets: 
+widgets:
 - category
 - tag
 ## provide six widgets:category,tag,rss,archive,tagcloud,links.
@@ -25,7 +25,7 @@ rss: ## RSS address.
 imglogo:
   enable: true             ## display image logo true/false.
   src: img/wower.jpg        ## `.svg` and `.png` are recommended,please put image into the theme folder `/iceman/source/img`.
-favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/iceman/source/img`.     
+favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/iceman/source/img`.
 apple_icon: img/wower.jpg ## size:114px*114px,please put image into the theme folder `/iceman/source/img`.
 
 #### Author Avatar Picture
@@ -50,7 +50,7 @@ toc:
 ## if you don't want display contents in a specified post,you can modify `front-matter` and add `toc: false`.
 
 #### Fancybox
-fancybox: false 
+fancybox: false
 ## if you use gallery post or want use fancybox please set the value to true.
 ## if you want use fancybox in ANY post please copy the file `fancybox.js`.
 ## in theme folder `/iceman/scripts` to your hexo blog folder `../scritps`.
@@ -67,14 +67,14 @@ author:
   tsina:      ## e.g. 1664838973  Your weibo ID,It will be used in share button.
 
 #### Comment
-duoshuo: 
+duoshuo:
   enable: false  ## duoshuo.com
   short_name:    ## duoshuo short name.
 
 #### Share button
 jiathis:
   enable: false ## if you use jiathis as your share tool,the built-in share tool won't be display.
-  id:    ## e.g. 1501277 your jiathis ID. 
+  id:    ## e.g. 1501277 your jiathis ID.
   tsina: ## e.g. 1664838973 Your weibo id,It will be used in share button.
 
 #### Analytics
@@ -91,16 +91,23 @@ la51_analytics:
   id:   ## e.g. 17278963 is your 51la analytics ID.
 
 #### Custom Search
-google_cse: 
+google_cse:
   enable: false
   cx:  ## e.g. 000561263943549425496:mrzrm0gr4kg your Custom Search ID
-## https://www.google.com/cse/ 
+## https://www.google.com/cse/
 ## To enable the custom search You must create a "search" folder in '/source' and a "index.md" file
 ## set the 'front-matter' as
-## layout: search 
+## layout: search
 ## title: search
 ## ---
 
 #### Standard Search
-standard_search: 
+standard_search:
   engine: 'false'  ## possible enum: false/google/baidu. set to false if you want to hide the default search box
+
+vssue:
+  enable: true
+  owner: imwower
+  repo: imwower.github.io
+  clientId: 894cf60c98c43ae1093d
+  clientSecret: fd3f62d0e91cb7e414fe7fcb0cc27932847974ec
