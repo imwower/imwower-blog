@@ -1,7 +1,6 @@
 <% if (page.comments){ %>
     <section class="comment">
         <div id="vssue"></div>
-        <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
         <script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
         <script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
         <script>
@@ -20,6 +19,7 @@
                 })
             })
         </script>
+        <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
         <style>
             .vssue {
                 padding: 0;
@@ -38,6 +38,9 @@
             }
             .vssue .vssue-new-comment .vssue-new-comment-input {
                 border-radius: 1px;
+            }
+            .vssue .vssue-status, vssue-progress-color, vssue-border-color {
+                color: #2ca6cb;
             }
         </style>
     </section>
